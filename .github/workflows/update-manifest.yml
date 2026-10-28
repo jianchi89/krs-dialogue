@@ -1,0 +1,50 @@
+# 放到【对白美化】仓库的 .github/workflows/update-manifest.yml
+# 作用：push dialogue.js 后自动重算 dialogue.manifest.json 的 sha256
+# 前提：Settings → Actions → General → Workflow permissions 选 “Read and write permissions”
+name: update-dialogue-manifest
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'dialogue.js'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  manifest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Sync dialogue manifest
+        run: |
+          set -euo pipefail
+          if [ ! -f dialogue.js ] || [ ! -f dialogue.manifest.json ]; then
+            echo "skip: missing dialogue.js or dialogue.manifest.json"
+            exit 0
+          fi
+          sha=$(sha256sum dialogue.js | cut -d' ' -f1)
+          now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+          tmp=$(mktemp)
+          jq --arg sha "$sha" --arg now "$now" \
+             '.sha256 = $sha | .updatedAt = $now' \
+             dialogue.manifest.json > "$tmp"
+          mv "$tmp" dialogue.manifest.json
+          echo "dialogue.js -> $sha"
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet; then
+            echo "no manifest changes"
+            exit 0
+          fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add dialogue.manifest.json
+          git commit -m "chore: sync dialogue manifest sha256"
+          git push
