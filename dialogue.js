@@ -50,6 +50,13 @@
  *      的 4px 内嵌细框；新角色不在旧名单里，于是有立绘也被套上这圈框。
  *      现在凡是有 avatar 的角色都把 ::after 关掉，和盖欧这类老角色一致（整块填满）。
  *
+ * 【v2.6.2】热更新「先正常、加载完又变回去」的根因与对策：
+ *   远端拿到的还是旧版脚本时，它会把卡内已经生效的新版 CSS 整个替换掉。
+ *   现在 boot() 会把真正生效的版本写到宿主 window.__NVN_DLG_VERSION__，
+ *   加载器据此做三道闸（见 dialogue-loader.template.js）：
+ *     ① 远端 version 更旧 → 不执行；② 清单 version 与脚本内 VERSION 不符 → 不执行；
+ *     ③ 执行完回读版本，不符就在控制台报警。
+ *
  * 【依赖】酒馆助手。关掉它对白会失去样式；此时可把同目录的
  *         「对白美化-自定义CSS版-中文与双语通用.css」整段粘进
  *         酒馆「用户设置 → 自定义CSS」。
@@ -57,7 +64,7 @@
 (async function () {
   'use strict';
 
-  const VERSION  = '2.6.1';
+  const VERSION  = '2.6.2';
   const STYLE_ID = 'nvn-dialogue-theme-css';
   const SLOT     = '__NVN_DLG_CSS__';
 
@@ -4519,6 +4526,9 @@ div.custom-nvn-dialogue:is([data-char*="爱丽丝"], [data-char*="爱·丽·丝"
       reconcile: reconcile,
       newCharacters: NEW_CHARACTERS,
     };
+    /* 给热更新加载器看：现在真正生效的是哪一版。
+       卡内版本比远端新时，加载器会拒绝执行旧版远端，避免「热更新把新版盖回去」。 */
+    try { HW.__NVN_DLG_VERSION__ = VERSION; } catch (_) {}
   }
 
   boot();
