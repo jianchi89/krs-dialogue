@@ -298,6 +298,7 @@
         out += head + ' .custom-nvn-avatar-img { cursor: pointer !important; }\n';
       }
       out += head + '::before, ' + head + '::after { display: none !important; }\n';
+      out += head + ' .custom-nvn-name-initial, ' + head + ' .custom-nvn-name-rest { color: var(--main) !important; }\n';
       if (c.portrait) {
         out += head + ' .custom-nvn-portrait-full {\n  content: url("' + c.portrait + '") !important;\n}\n';
       }
@@ -416,8 +417,7 @@ div.custom-nvn-dialogue:not(:is(
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -444,8 +444,7 @@ div.custom-nvn-dialogue:not(:is(
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -474,7 +473,7 @@ div.custom-nvn-dialogue:is(
   [data-char*="提亚拉"], [data-char*="古伊奈"], [data-char*="雷克西斯"], [data-char*="帕特里琪娅"], 
   [data-char*="奇诺米"], [data-char*="蒂莎"], [data-char*="加莉泰娅"],
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"], [data-char*="幽妮娅"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"], [data-char*="IV"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="拉姆内"], [data-char*="摇篮的爱莉丝"], [data-char*="普莉姆拉"], [data-char*="梅拉妮"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="艾尔希IV"], [data-char*="菲娅娜"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="IV"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="拉姆内"], [data-char*="摇篮的爱莉丝"], [data-char*="普莉姆拉"], [data-char*="梅拉妮"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="艾尔希IV"], [data-char*="菲娅娜"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
 , [data-char*="三月兔"], [data-char*="五月雨"], [data-char*="人偶爱丽丝"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="凯埃尔"], [data-char*="利奥"], [data-char*="南丁格尔"], [data-char*="卡伊埃尔"], [data-char*="塞伊"], [data-char*="大王"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小春"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="布娜"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="弗洛伦斯"], [data-char*="德尔菲尼"], [data-char*="德尔菲尼·柯涅尔"], [data-char*="拉菲莉娅"], [data-char*="提尔德"], [data-char*="提尔德·柯涅尔"], [data-char*="普利凯特"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="桑尼"], [data-char*="梅法"], [data-char*="梅法·格里亚德"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱丽丝·利德尔"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="芙萝"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="萨菲亚"], [data-char*="蒂格蕾娜"], [data-char*="蒂格蕾娜·索菈"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="雏鸟"]) .custom-nvn-avatar-img {
   cursor: pointer !important;
 }
@@ -491,7 +490,7 @@ div.custom-nvn-dialogue:not(:is(
   [data-char*="提亚拉"], [data-char*="古伊奈"], [data-char*="雷克西斯"], [data-char*="帕特里琪娅"], 
   [data-char*="奇诺米"], [data-char*="蒂莎"], [data-char*="加莉泰娅"],
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"], [data-char*="幽妮娅"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"], [data-char*="IV"], [data-char*="一之濑雫"], [data-char*="丽塔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="伊莉丝"], [data-char*="克蕾雅"], [data-char*="凯拉涅斯"], [data-char*="加莉泰娅"], [data-char*="卡莲"], [data-char*="卢克蕾齐雅"], [data-char*="古伊奈"], [data-char*="夏洛特"], [data-char*="响木天音"], [data-char*="奇诺米"], [data-char*="小忆"], [data-char*="帕特里琪娅"], [data-char*="幽妮娅"], [data-char*="托莉娜"], [data-char*="拉姆"], [data-char*="拉姆内"], [data-char*="提亚拉"], [data-char*="摇篮的爱莉丝"], [data-char*="斯提亚拉"], [data-char*="斯雅"], [data-char*="普莉姆拉"], [data-char*="柯萝特"], [data-char*="梅拉"], [data-char*="梅拉妮"], [data-char*="法妮雅"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="狄娜"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="盖欧露易丝"], [data-char*="艾妮希雅"], [data-char*="艾尔希"], [data-char*="艾尔希IV"], [data-char*="艾拉"], [data-char*="芙洛蒂"], [data-char*="菲娅"], [data-char*="菲娅娜"], [data-char*="蒂莎"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="阿黛拉"], [data-char*="雫"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="IV"], [data-char*="一之濑雫"], [data-char*="丽塔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="伊莉丝"], [data-char*="克蕾雅"], [data-char*="凯拉涅斯"], [data-char*="加莉泰娅"], [data-char*="卡莲"], [data-char*="卢克蕾齐雅"], [data-char*="古伊奈"], [data-char*="夏洛特"], [data-char*="响木天音"], [data-char*="奇诺米"], [data-char*="小忆"], [data-char*="帕特里琪娅"], [data-char*="幽妮娅"], [data-char*="托莉娜"], [data-char*="拉姆"], [data-char*="拉姆内"], [data-char*="提亚拉"], [data-char*="摇篮的爱莉丝"], [data-char*="斯提亚拉"], [data-char*="斯雅"], [data-char*="普莉姆拉"], [data-char*="柯萝特"], [data-char*="梅拉"], [data-char*="梅拉妮"], [data-char*="法妮雅"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="狄娜"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="盖欧露易丝"], [data-char*="艾妮希雅"], [data-char*="艾尔希"], [data-char*="艾尔希IV"], [data-char*="艾拉"], [data-char*="芙洛蒂"], [data-char*="菲娅"], [data-char*="菲娅娜"], [data-char*="蒂莎"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="阿黛拉"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
 )) .custom-nvn-avatar-popover {
   pointer-events: none !important;
 }
@@ -539,8 +538,7 @@ div.custom-nvn-dialogue:is([data-char*="02-D"], [data-char*="利德尔次女"], 
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -598,8 +596,7 @@ div.custom-nvn-dialogue:is(
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -798,8 +795,7 @@ div.custom-nvn-dialogue:is([data-player^="user"], [data-player="true"], [is_user
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"]
-, [data-char*="IV"], [data-char*="三月兔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="人偶爱丽丝"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="南丁格尔"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="弗洛伦斯"], [data-char*="德尔菲尼"], [data-char*="德尔菲尼·柯涅尔"], [data-char*="提尔德"], [data-char*="提尔德·柯涅尔"], [data-char*="摇篮的爱莉丝"], [data-char*="普利凯特"], [data-char*="普莉姆拉"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="梅法"], [data-char*="梅法·格里亚德"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱丽丝·利德尔"], [data-char*="爱莉丝"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="蒂格蕾娜"], [data-char*="蒂格蕾娜·索菈"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="雏鸟"], [data-char*="驱魔"], [data-char*="魔化"])) .custom-nvn-avatar-img {
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], , [data-char*="IV"], [data-char*="三月兔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="人偶爱丽丝"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="南丁格尔"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="弗洛伦斯"], [data-char*="德尔菲尼"], [data-char*="德尔菲尼·柯涅尔"], [data-char*="提尔德"], [data-char*="提尔德·柯涅尔"], [data-char*="摇篮的爱莉丝"], [data-char*="普利凯特"], [data-char*="普莉姆拉"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="梅法"], [data-char*="梅法·格里亚德"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱丽丝·利德尔"], [data-char*="爱莉丝"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="蒂格蕾娜"], [data-char*="蒂格蕾娜·索菈"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="雏鸟"], [data-char*="驱魔"], [data-char*="魔化"])) .custom-nvn-avatar-img {
   background-image: radial-gradient(ellipse at center, rgba(226, 232, 240, 0.18) 0%, rgba(16, 18, 22, 0.92) 100%) !important;
 }
 
@@ -966,7 +962,7 @@ div.custom-nvn-dialogue[data-char*="利奥"] { --main: #b3541e !important; --sub
 /* 托莉娜（白金色）、魔化托莉娜（纯银冷色）、一之濑雫（淡紫色） */
 div.custom-nvn-dialogue[data-char*="托莉娜"]:not([data-char*="魔化"]) { --main: #e2c077 !important; --sub: #fbf5e6 !important; --rgb: 226, 192, 119 !important; --motion-color: #ebd39c !important; }
 div.custom-nvn-dialogue[data-char*="魔化托莉娜"] { --main: #aebacd !important; --sub: #eef2f7 !important; --rgb: 174, 186, 205 !important; --motion-color: #c4d0df !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"]) { --main: #b49bef !important; --sub: #f1ebfc !important; --rgb: 180, 155, 239 !important; --motion-color: #cbbaee !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) { --main: #b49bef !important; --sub: #f1ebfc !important; --rgb: 180, 155, 239 !important; --motion-color: #cbbaee !important; }
 /* =========================================================================
  * 🌟 新增 Black Souls 体系角色专属色彩（四个爱丽丝防撞色微调）
  * ========================================================================= */
@@ -1842,24 +1838,24 @@ div.custom-nvn-dialogue[data-char*="利奥"] .custom-nvn-avatar-img { background
 [data-char*="魔化托莉娜"][data-action="脸红思考"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/f9929351b455a0304f627b37a49e8c9d1fa906a6cbfc85bf.png") !important; }
 
 /* --- 一之濑雫 / 雫 --- */
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"]) .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action*="脸红"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/09e26bced46e30d238f6984b626886c2bc09133743761b6c.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/5dbfa091a61d2bb085d80aa2e533c1de99a26b13f6ae5a74.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/bcfa3d9a0704c752b7831fde035c8a5415871ad245e3bede.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/31f6ab4b8cc959d533a980e09ee2180ef753b4c544c86058.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/041b001eb884aa12b5a6d75225fe246d867ddfc51ff4cbc1.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/cd59b86e6bbbe23bb9be7e17ecd97d8cb7a78ff84194fce8.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/1578f5cc3a5ed39f4808cae1f7dab4e38dcd5cc8fd06d60e.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6c41535ce1b1b6ee525a4fb24ba4a0bff6b69ff0d128c154.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/3aae8af8ee178147ff154a7864a49893cc9aca1bda92c641.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/170b67c64cc65605fef822d807ac412adb19b0a78c06fa18.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/77c33be9a76812b4a21d3e0b5d839ec729000848790ec2ea.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/df26f28a473ef7bb2b578813ce463c7a85877b0eb75e52ec.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6e45c3fc43f53acf2e81b12d04267548a237a427ca49fc97.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/2bbc4a6ff0d208945286f8f46ec703efd56db0f91171ce3a.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action*="脸红"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/09e26bced46e30d238f6984b626886c2bc09133743761b6c.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/5dbfa091a61d2bb085d80aa2e533c1de99a26b13f6ae5a74.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/bcfa3d9a0704c752b7831fde035c8a5415871ad245e3bede.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/31f6ab4b8cc959d533a980e09ee2180ef753b4c544c86058.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/041b001eb884aa12b5a6d75225fe246d867ddfc51ff4cbc1.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/cd59b86e6bbbe23bb9be7e17ecd97d8cb7a78ff84194fce8.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/1578f5cc3a5ed39f4808cae1f7dab4e38dcd5cc8fd06d60e.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6c41535ce1b1b6ee525a4fb24ba4a0bff6b69ff0d128c154.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/3aae8af8ee178147ff154a7864a49893cc9aca1bda92c641.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/170b67c64cc65605fef822d807ac412adb19b0a78c06fa18.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/77c33be9a76812b4a21d3e0b5d839ec729000848790ec2ea.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/df26f28a473ef7bb2b578813ce463c7a85877b0eb75e52ec.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6e45c3fc43f53acf2e81b12d04267548a237a427ca49fc97.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/2bbc4a6ff0d208945286f8f46ec703efd56db0f91171ce3a.png") !important; }
 /* =========================================================================
  * 🌟 纯透明全屏居中大立绘映射
  * ========================================================================= */
@@ -1942,7 +1938,7 @@ div.custom-nvn-dialogue[data-char*="柯萝特"] .custom-nvn-portrait-full { cont
 div.custom-nvn-dialogue[data-char*="幽妮娅"] .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/09/29/lihuifa9005a93c640406.png") !important; }
 div.custom-nvn-dialogue[data-char*="托莉娜"]:not([data-char*="魔化"]) .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/61144e7687c3e0fe0ba1946940e64c09032c738028a3f759.png") !important; }
 div.custom-nvn-dialogue[data-char*="魔化托莉娜"] .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/f5721a8e9a671b9510b105a3a44059304a6fbb0293e60df2.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"]) .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/d87fc72aee3455f8114a1ce7ef099ed0df6e35429ab21f77.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/d87fc72aee3455f8114a1ce7ef099ed0df6e35429ab21f77.png") !important; }
 /* ====== 移动端自适应 ====== */
 @media (max-width: 560px) {
   .custom-nvn-dialogue { gap: 12px; margin: 10px 0 12px; }
@@ -2382,9 +2378,8 @@ div.custom-nvn-dialogue:not(:is(
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"]，
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], ，
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -2411,8 +2406,7 @@ div.custom-nvn-dialogue:not(:is(
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"]，
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -2441,7 +2435,7 @@ div.custom-nvn-dialogue:is(
   [data-char*="提亚拉"], [data-char*="古伊奈"], [data-char*="雷克西斯"], [data-char*="帕特里琪娅"], 
   [data-char*="奇诺米"], [data-char*="蒂莎"], [data-char*="加莉泰娅"],
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"], [data-char*="幽妮娅"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"], [data-char*="IV"], [data-char*="一之濑雫"], [data-char*="丽塔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="伊莉丝"], [data-char*="克蕾雅"], [data-char*="凯拉涅斯"], [data-char*="加莉泰娅"], [data-char*="卡莲"], [data-char*="卢克蕾齐雅"], [data-char*="古伊奈"], [data-char*="夏洛特"], [data-char*="响木天音"], [data-char*="奇诺米"], [data-char*="小忆"], [data-char*="帕特里琪娅"], [data-char*="幽妮娅"], [data-char*="托莉娜"], [data-char*="拉姆"], [data-char*="拉姆内"], [data-char*="提亚拉"], [data-char*="摇篮的爱莉丝"], [data-char*="斯提亚拉"], [data-char*="斯雅"], [data-char*="普莉姆拉"], [data-char*="柯萝特"], [data-char*="梅拉"], [data-char*="梅拉妮"], [data-char*="法妮雅"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="狄娜"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="盖欧露易丝"], [data-char*="艾妮希雅"], [data-char*="艾尔希"], [data-char*="艾尔希IV"], [data-char*="艾拉"], [data-char*="芙洛蒂"], [data-char*="菲娅"], [data-char*="菲娅娜"], [data-char*="蒂莎"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="阿黛拉"], [data-char*="雫"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="IV"], [data-char*="一之濑雫"], [data-char*="丽塔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="伊莉丝"], [data-char*="克蕾雅"], [data-char*="凯拉涅斯"], [data-char*="加莉泰娅"], [data-char*="卡莲"], [data-char*="卢克蕾齐雅"], [data-char*="古伊奈"], [data-char*="夏洛特"], [data-char*="响木天音"], [data-char*="奇诺米"], [data-char*="小忆"], [data-char*="帕特里琪娅"], [data-char*="幽妮娅"], [data-char*="托莉娜"], [data-char*="拉姆"], [data-char*="拉姆内"], [data-char*="提亚拉"], [data-char*="摇篮的爱莉丝"], [data-char*="斯提亚拉"], [data-char*="斯雅"], [data-char*="普莉姆拉"], [data-char*="柯萝特"], [data-char*="梅拉"], [data-char*="梅拉妮"], [data-char*="法妮雅"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="狄娜"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="盖欧露易丝"], [data-char*="艾妮希雅"], [data-char*="艾尔希"], [data-char*="艾尔希IV"], [data-char*="艾拉"], [data-char*="芙洛蒂"], [data-char*="菲娅"], [data-char*="菲娅娜"], [data-char*="蒂莎"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="阿黛拉"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
 , [data-char*="三月兔"], [data-char*="五月雨"], [data-char*="人偶爱丽丝"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="凯埃尔"], [data-char*="利奥"], [data-char*="卡伊埃尔"], [data-char*="塞伊"], [data-char*="大王"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小春"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="布娜"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="弗洛伦斯"], [data-char*="拉菲莉娅"], [data-char*="普利凯特"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="桑尼"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱丽丝·利德尔"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="芙萝"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="萨菲亚"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="雏鸟"]) .custom-nvn-avatar-img {
   cursor: pointer !important;
 }
@@ -2458,7 +2452,7 @@ div.custom-nvn-dialogue:not(:is(
   [data-char*="提亚拉"], [data-char*="古伊奈"], [data-char*="雷克西斯"], [data-char*="帕特里琪娅"], 
   [data-char*="奇诺米"], [data-char*="蒂莎"], [data-char*="加莉泰娅"],
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"], [data-char*="幽妮娅"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"], [data-char*="IV"], [data-char*="一之濑雫"], [data-char*="丽塔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="伊莉丝"], [data-char*="克蕾雅"], [data-char*="凯拉涅斯"], [data-char*="加莉泰娅"], [data-char*="卡莲"], [data-char*="卢克蕾齐雅"], [data-char*="古伊奈"], [data-char*="夏洛特"], [data-char*="响木天音"], [data-char*="奇诺米"], [data-char*="小忆"], [data-char*="帕特里琪娅"], [data-char*="幽妮娅"], [data-char*="托莉娜"], [data-char*="拉姆"], [data-char*="拉姆内"], [data-char*="提亚拉"], [data-char*="摇篮的爱莉丝"], [data-char*="斯提亚拉"], [data-char*="斯雅"], [data-char*="普莉姆拉"], [data-char*="柯萝特"], [data-char*="梅拉"], [data-char*="梅拉妮"], [data-char*="法妮雅"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="狄娜"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="盖欧露易丝"], [data-char*="艾妮希雅"], [data-char*="艾尔希"], [data-char*="艾尔希IV"], [data-char*="艾拉"], [data-char*="芙洛蒂"], [data-char*="菲娅"], [data-char*="菲娅娜"], [data-char*="蒂莎"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="阿黛拉"], [data-char*="雫"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="IV"], [data-char*="一之濑雫"], [data-char*="丽塔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="伊莉丝"], [data-char*="克蕾雅"], [data-char*="凯拉涅斯"], [data-char*="加莉泰娅"], [data-char*="卡莲"], [data-char*="卢克蕾齐雅"], [data-char*="古伊奈"], [data-char*="夏洛特"], [data-char*="响木天音"], [data-char*="奇诺米"], [data-char*="小忆"], [data-char*="帕特里琪娅"], [data-char*="幽妮娅"], [data-char*="托莉娜"], [data-char*="拉姆"], [data-char*="拉姆内"], [data-char*="提亚拉"], [data-char*="摇篮的爱莉丝"], [data-char*="斯提亚拉"], [data-char*="斯雅"], [data-char*="普莉姆拉"], [data-char*="柯萝特"], [data-char*="梅拉"], [data-char*="梅拉妮"], [data-char*="法妮雅"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱莉丝"], [data-char*="狄娜"], [data-char*="王铠"], [data-char*="王铠古伊奈"], [data-char*="王铠盖欧露易丝"], [data-char*="盖欧露易丝"], [data-char*="艾妮希雅"], [data-char*="艾尔希"], [data-char*="艾尔希IV"], [data-char*="艾拉"], [data-char*="芙洛蒂"], [data-char*="菲娅"], [data-char*="菲娅娜"], [data-char*="蒂莎"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="阿黛拉"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"], [data-char*="驱魔"], [data-char*="驱魔夏洛特"], [data-char*="魔化"], [data-char*="魔化托莉娜"]
 )) .custom-nvn-avatar-popover {
   pointer-events: none !important;
 }
@@ -2506,15 +2500,14 @@ div.custom-nvn-dialogue:is([data-char*="02-D"], [data-char*="利德尔次女"], 
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
   [data-char*="弗洛伦斯"], [data-char*="罗丽娜"], [data-char*="格尔达"], [data-char*="尤妮丝"],
   [data-char*="莱登"], [data-char*="克缇"], [data-char*="贾巴沃克"], [data-char*="贾布加布"],
   [data-char*="班达斯奈奇"], [data-char*="希伏契"], [data-char*="柴郡猫"], [data-char*="人偶爱丽丝"],
-  [data-char*="雏鸟"], [data-char*="蛇神"], [data-char*="一之濑雫"], [data-char*="三月兔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="五月雨"], [data-char*="人偶爱丽丝"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="凯埃尔"], [data-char*="利奥"], [data-char*="南丁格尔"], [data-char*="卡伊埃尔"], [data-char*="塞伊"], [data-char*="大王"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小春"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="布娜"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="幽妮娅"], [data-char*="弗洛伦斯"], [data-char*="德尔菲尼"], [data-char*="德尔菲尼·柯涅尔"], [data-char*="拉菲莉娅"], [data-char*="提亚拉"], [data-char*="提尔德"], [data-char*="提尔德·柯涅尔"], [data-char*="摇篮的爱莉丝"], [data-char*="斯雅"], [data-char*="普利凯特"], [data-char*="普莉姆拉"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="桑尼"], [data-char*="梅法"], [data-char*="梅法·格里亚德"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱丽丝·利德尔"], [data-char*="爱莉丝"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="芙萝"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="萨菲亚"], [data-char*="蒂格蕾娜"], [data-char*="蒂格蕾娜·索菈"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="雏鸟"], [data-char*="雫"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"]
+  [data-char*="雏鸟"], [data-char*="蛇神"], [data-char*="一之濑雫"], [data-char*="三月兔"], [data-char*="丽薇歌塔"], [data-char*="丽薇歌塔·柯涅尔"], [data-char*="五月雨"], [data-char*="人偶爱丽丝"], [data-char*="伊夏"], [data-char*="伊夏·波利斯塔切尔"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="凯埃尔"], [data-char*="利奥"], [data-char*="南丁格尔"], [data-char*="卡伊埃尔"], [data-char*="塞伊"], [data-char*="大王"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小春"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="布娜"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="幽妮娅"], [data-char*="弗洛伦斯"], [data-char*="德尔菲尼"], [data-char*="德尔菲尼·柯涅尔"], [data-char*="拉菲莉娅"], [data-char*="提亚拉"], [data-char*="提尔德"], [data-char*="提尔德·柯涅尔"], [data-char*="摇篮的爱莉丝"], [data-char*="斯雅"], [data-char*="普利凯特"], [data-char*="普莉姆拉"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="桑尼"], [data-char*="梅法"], [data-char*="梅法·格里亚德"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱·丽·丝"], [data-char*="爱丽丝"], [data-char*="爱丽丝·利德尔"], [data-char*="爱莉丝"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="芙萝"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="萨菲亚"], [data-char*="蒂格蕾娜"], [data-char*="蒂格蕾娜·索菈"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="诺艾儿"], [data-char*="诺艾儿·柯涅尔"], [data-char*="诺艾儿·私"], [data-char*="诺艾尔"], [data-char*="诺艾尔·柯涅尔"], [data-char*="诺艾尔·私"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="赛蕾姆丝"], [data-char*="阿尔玛"], [data-char*="阿尔玛·奥普菲帕姆"], [data-char*="雏鸟"], [data-char*="雷克西斯"], [data-char*="露娜"], [data-char*="露易丝"]
 ) .custom-nvn-avatar-fallback-box {
   display: none !important;
 }
@@ -2605,8 +2598,7 @@ div.custom-nvn-dialogue:is(
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"],
-  [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="爱丽丝"], [data-char*="诺登"], [data-char*="小红帽"], [data-char*="普利凯特"],
   [data-char*="梅贝尔"], [data-char*="玛丽·安"], [data-char*="莉耶芙"], [data-char*="公爵夫人"],
   [data-char*="帽子屋"], [data-char*="三月兔"], [data-char*="格里菲"], [data-char*="假海龟"],
   [data-char*="渡渡"], [data-char*="希夏"], [data-char*="比尔"], [data-char*="维多利雅"],
@@ -2807,8 +2799,7 @@ div.custom-nvn-dialogue:is([data-player^="user"], [data-player="true"], [is_user
   [data-char*="艾尔希"], [data-char*="狄娜"], [data-char*="卡莲"], [data-char*="柯萝特"],
   [data-char*="芙萝"], [data-char*="艾珀尔"], [data-char*="芙洛瑞丝"], [data-char*="布娜"],
   [data-char*="幽妮娅"], [data-char*="塞伊"], [data-char*="利奥"],
-  [data-char*="托莉娜"], [data-char*="一之濑雫"], [data-char*="雫"]
-, [data-char*="IV"], [data-char*="三月兔"], [data-char*="人偶爱丽丝"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="弗洛伦斯"], [data-char*="普利凯特"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱丽丝·利德尔"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="雏鸟"], [data-char*="驱魔"], [data-char*="魔化"])) .custom-nvn-avatar-img {
+  [data-char*="托莉娜"], [data-char*="一之濑雫"], , [data-char*="IV"], [data-char*="三月兔"], [data-char*="人偶爱丽丝"], [data-char*="假海龟"], [data-char*="克缇"], [data-char*="公爵夫人"], [data-char*="女儿"], [data-char*="女儿爱丽丝"], [data-char*="妈妈爱丽丝"], [data-char*="妹妹爱丽丝"], [data-char*="小红帽"], [data-char*="尤妮丝"], [data-char*="崔德尔·蒂"], [data-char*="崔德尔·达姆"], [data-char*="希伏契"], [data-char*="希夏"], [data-char*="帽子屋"], [data-char*="弗洛伦斯"], [data-char*="普利凯特"], [data-char*="柴郡猫"], [data-char*="格尔达"], [data-char*="格里菲"], [data-char*="梅贝尔"], [data-char*="母亲爱丽丝"], [data-char*="比尔"], [data-char*="渡渡"], [data-char*="爱丽丝·利德尔"], [data-char*="玛丽·安"], [data-char*="班达斯奈奇"], [data-char*="维多利雅"], [data-char*="罗丽娜"], [data-char*="莉耶芙"], [data-char*="莱登"], [data-char*="蛇神"], [data-char*="诺登"], [data-char*="贾巴沃克"], [data-char*="贾布加布"], [data-char*="雏鸟"], [data-char*="驱魔"], [data-char*="魔化"])) .custom-nvn-avatar-img {
   background-image: radial-gradient(ellipse at center, rgba(226, 232, 240, 0.18) 0%, rgba(16, 18, 22, 0.92) 100%) !important;
 }
 
@@ -3014,7 +3005,7 @@ div.custom-nvn-dialogue[data-char*="利奥"] { --main: #b3541e !important; --sub
 /* 托莉娜（白金色）、魔化托莉娜（纯银冷色）、一之濑雫（淡紫色） */
 div.custom-nvn-dialogue[data-char*="托莉娜"]:not([data-char*="魔化"]) { --main: #e2c077 !important; --sub: #fbf5e6 !important; --rgb: 226, 192, 119 !important; --motion-color: #ebd39c !important; }
 div.custom-nvn-dialogue[data-char*="魔化托莉娜"] { --main: #aebacd !important; --sub: #eef2f7 !important; --rgb: 174, 186, 205 !important; --motion-color: #c4d0df !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"]) { --main: #b49bef !important; --sub: #f1ebfc !important; --rgb: 180, 155, 239 !important; --motion-color: #cbbaee !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) { --main: #b49bef !important; --sub: #f1ebfc !important; --rgb: 180, 155, 239 !important; --motion-color: #cbbaee !important; }
 /* =========================================================================
  * 🌟 新增 Black Souls 体系角色专属色彩（四个爱丽丝防撞色微调）
  * ========================================================================= */
@@ -3877,24 +3868,24 @@ div.custom-nvn-dialogue[data-char*="利奥"] .custom-nvn-avatar-img { background
 [data-char*="魔化托莉娜"][data-action="脸红思考"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/f9929351b455a0304f627b37a49e8c9d1fa906a6cbfc85bf.png") !important; }
 
 /* --- 一之濑雫 / 雫 --- */
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"]) .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action*="脸红"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/09e26bced46e30d238f6984b626886c2bc09133743761b6c.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/5dbfa091a61d2bb085d80aa2e533c1de99a26b13f6ae5a74.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/bcfa3d9a0704c752b7831fde035c8a5415871ad245e3bede.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/31f6ab4b8cc959d533a980e09ee2180ef753b4c544c86058.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/041b001eb884aa12b5a6d75225fe246d867ddfc51ff4cbc1.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/cd59b86e6bbbe23bb9be7e17ecd97d8cb7a78ff84194fce8.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/1578f5cc3a5ed39f4808cae1f7dab4e38dcd5cc8fd06d60e.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6c41535ce1b1b6ee525a4fb24ba4a0bff6b69ff0d128c154.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/3aae8af8ee178147ff154a7864a49893cc9aca1bda92c641.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/170b67c64cc65605fef822d807ac412adb19b0a78c06fa18.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/77c33be9a76812b4a21d3e0b5d839ec729000848790ec2ea.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/df26f28a473ef7bb2b578813ce463c7a85877b0eb75e52ec.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6e45c3fc43f53acf2e81b12d04267548a237a427ca49fc97.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"])[data-action="脸红皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/2bbc4a6ff0d208945286f8f46ec703efd56db0f91171ce3a.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action*="脸红"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/13bcc39120a81f21da53e7602f9fb44be44c3589799d5a5c.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红通常"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/4b239bc073875aef5326c9d1e0d0c4a1ee7baace45c60693.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/09e26bced46e30d238f6984b626886c2bc09133743761b6c.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红得意"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/5dbfa091a61d2bb085d80aa2e533c1de99a26b13f6ae5a74.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/bcfa3d9a0704c752b7831fde035c8a5415871ad245e3bede.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红惊讶"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/31f6ab4b8cc959d533a980e09ee2180ef753b4c544c86058.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/041b001eb884aa12b5a6d75225fe246d867ddfc51ff4cbc1.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红高兴"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/cd59b86e6bbbe23bb9be7e17ecd97d8cb7a78ff84194fce8.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/1578f5cc3a5ed39f4808cae1f7dab4e38dcd5cc8fd06d60e.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红难过"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6c41535ce1b1b6ee525a4fb24ba4a0bff6b69ff0d128c154.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/3aae8af8ee178147ff154a7864a49893cc9aca1bda92c641.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红疑惑"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/170b67c64cc65605fef822d807ac412adb19b0a78c06fa18.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/77c33be9a76812b4a21d3e0b5d839ec729000848790ec2ea.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红生气"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/df26f28a473ef7bb2b578813ce463c7a85877b0eb75e52ec.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/6e45c3fc43f53acf2e81b12d04267548a237a427ca49fc97.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], )[data-action="脸红皱眉"] .custom-nvn-avatar-img { background-image: url("https://origin.picgo.net/2026/10/02/2bbc4a6ff0d208945286f8f46ec703efd56db0f91171ce3a.png") !important; }
 /* =========================================================================
  * 🌟 纯透明全屏居中大立绘映射
  * ========================================================================= */
@@ -3977,7 +3968,7 @@ div.custom-nvn-dialogue[data-char*="柯萝特"] .custom-nvn-portrait-full { cont
 div.custom-nvn-dialogue[data-char*="幽妮娅"] .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/09/29/lihuifa9005a93c640406.png") !important; }
 div.custom-nvn-dialogue[data-char*="托莉娜"]:not([data-char*="魔化"]) .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/61144e7687c3e0fe0ba1946940e64c09032c738028a3f759.png") !important; }
 div.custom-nvn-dialogue[data-char*="魔化托莉娜"] .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/f5721a8e9a671b9510b105a3a44059304a6fbb0293e60df2.png") !important; }
-div.custom-nvn-dialogue:is([data-char*="一之濑雫"], [data-char*="雫"]) .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/d87fc72aee3455f8114a1ce7ef099ed0df6e35429ab21f77.png") !important; }
+div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-portrait-full { content: url("https://origin.picgo.net/2026/10/02/d87fc72aee3455f8114a1ce7ef099ed0df6e35429ab21f77.png") !important; }
 /* ====== 移动端自适应 ====== */
 @media (max-width: 560px) {
   .custom-nvn-dialogue { gap: 12px; margin: 10px 0 12px; }
