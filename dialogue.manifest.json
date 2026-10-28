@@ -1,8 +1,8 @@
 {
-    "schema":  1,
-    "abi":  1,
-    "version":  "2.6.0",
-    "script":  "https://raw.githubusercontent.com/jianchi89/krs-dialogue/main/dialogue.js",
-    "sha256":  "2667dac32280cabcc7ba54c7db2ee1d8a196acb5595d88943148a57fbb308771",
-    "updatedAt":  "2026-10-28T15:33:22Z"
+  "schema": 1,
+  "abi": 1,
+  "version": "2.6.0",
+  "script": "https://raw.githubusercontent.com/jianchi89/krs-dialogue/main/dialogue.js",
+  "sha256": "2667dac32280cabcc7ba54c7db2ee1d8a196acb5595d88943148a57fbb308771",
+  "updatedAt": "2026-10-28T15:39:11Z"
 }
