@@ -1,5 +1,5 @@
 /* =========================================================================
- * 对白美化 · 全局 CSS 注入器  v2.1.1
+ * 对白美化 · 全局 CSS 注入器  v2.1.3
  * -------------------------------------------------------------------------
  * 【为什么需要它 / v2.0.0 的由来】
  *   酒馆会把消息里的所有 class 改名：nvn-dialogue → custom-nvn-dialogue
@@ -57,6 +57,14 @@
  *     ① 远端 version 更旧 → 不执行；② 清单 version 与脚本内 VERSION 不符 → 不执行；
  *     ③ 执行完回读版本，不符就在控制台报警。
  *
+ * 【发布 2.1.3（2026-11-07）】
+ *   修「user 行台词下方多出一个空尾巴（空引号加竖线）」：
+ *   user 行的 display:flex 与空尾段隐藏规则同为 (0,3,0) 权重但排在后面，把 display:none 盖掉了；
+ *   现在给隐藏规则加 div.custom-nvn-dialogue 前缀提高权重，并同时覆盖两种尾段文本类名。
+ * 【发布 2.1.2（2026-11-07）】
+ *   修「user 模式台词不靠右」：亮色主题的 .nvn-text 只写了 justify-content:flex-end，
+ *   而 v2.1.0 已把 .nvn-text 改成 display:block，该属性失效；暗色主题当时补过
+ *   text-align:right，亮色漏了。现在两边一致。
  * 【发布 2.1.1（2026-11-07）】
  *   1) 修「双语格式下台词下方多出一条竖线尾巴」：空 .nvn-text-tail 容器没被隐藏。
  *      根因是隐藏规则只认 .nvn-primary，而双语模板用的是 .nvn-quote-val。
@@ -73,7 +81,7 @@
 (async function () {
   'use strict';
 
-  const VERSION  = '2.1.1';
+  const VERSION  = '2.1.3';
   const STYLE_ID = 'nvn-dialogue-theme-css';
   const SLOT     = '__NVN_DLG_CSS__';
 
@@ -1376,6 +1384,10 @@ div.custom-nvn-dialogue:is([data-player^="user"], [data-player="true"], [is_user
   padding-left: 0 !important;
   padding-right: 14px !important;
   justify-content: flex-end !important;
+  /* v2.1.2：.nvn-text 已是 block，justify-content 失效，补 text-align 才能真正靠右
+     （暗色主题一直有这两行，亮色主题漏了） */
+  margin-left: auto !important;
+  text-align: right !important;
 }
 
 [is_user="true"] .custom-nvn-dialogue .custom-nvn-text::before,
@@ -2545,13 +2557,17 @@ div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-portrait-f
 }
 
 /* ⭐ 隐藏空的尾部对话容器
-   v2.7 修正：中日双语模板用的是 .nvn-quote-val（不是 .nvn-primary），
-   旧规则永远匹配不到，于是没有第二段台词时容器仍画左边框，
-   在台词下方留下一条莫名其妙的竖线尾巴。 */
-.custom-nvn-text-tail:has(.custom-nvn-primary:empty) {
+   — 三种模板的尾段文本类名不同（.nvn-primary / .nvn-quote-val），两种都覆盖。
+   — 权重问题（v2.1.3）：user 行那条 [is_user] .nvn-text 的 display:flex 与旧隐藏规则
+     同为 (0,3,0)，但它在样式表里排在后面，直接把 display:none 盖掉，
+     所以只有 user 行会露出一个空引号加竖线的尾巴。这里加 div.custom-nvn-dialogue
+     前缀把权重提到 (0,4,1)，稳压 user 行那条。
+   — 再排除「纯中文」模板里日文兜底有内容的尾段，避免把该显示的回退台词藏掉。 */
+div.custom-nvn-dialogue .custom-nvn-text-tail:has(.custom-nvn-primary:empty):not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-ja-fallback:not(:empty))),
+div.custom-nvn-dialogue .custom-nvn-text-tail:has(.custom-nvn-quote-val:empty):not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-ja-fallback:not(:empty))) {
   display: none !important;
 }
-div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-text-tail:not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-quote-val:not(:empty))) {
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-text-tail:not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-quote-val:not(:empty))):not(:has(.custom-nvn-ja-fallback:not(:empty))) {
   display: none !important;
 }
 
@@ -4589,13 +4605,17 @@ div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-portrait-f
 }
 
 /* ⭐ 隐藏空的尾部对话容器
-   v2.7 修正：中日双语模板用的是 .nvn-quote-val（不是 .nvn-primary），
-   旧规则永远匹配不到，于是没有第二段台词时容器仍画左边框，
-   在台词下方留下一条莫名其妙的竖线尾巴。 */
-.custom-nvn-text-tail:has(.custom-nvn-primary:empty) {
+   — 三种模板的尾段文本类名不同（.nvn-primary / .nvn-quote-val），两种都覆盖。
+   — 权重问题（v2.1.3）：user 行那条 [is_user] .nvn-text 的 display:flex 与旧隐藏规则
+     同为 (0,3,0)，但它在样式表里排在后面，直接把 display:none 盖掉，
+     所以只有 user 行会露出一个空引号加竖线的尾巴。这里加 div.custom-nvn-dialogue
+     前缀把权重提到 (0,4,1)，稳压 user 行那条。
+   — 再排除「纯中文」模板里日文兜底有内容的尾段，避免把该显示的回退台词藏掉。 */
+div.custom-nvn-dialogue .custom-nvn-text-tail:has(.custom-nvn-primary:empty):not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-ja-fallback:not(:empty))),
+div.custom-nvn-dialogue .custom-nvn-text-tail:has(.custom-nvn-quote-val:empty):not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-ja-fallback:not(:empty))) {
   display: none !important;
 }
-div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-text-tail:not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-quote-val:not(:empty))) {
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-text-tail:not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-quote-val:not(:empty))):not(:has(.custom-nvn-ja-fallback:not(:empty))) {
   display: none !important;
 }
 
