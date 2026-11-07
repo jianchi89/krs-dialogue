@@ -1,5 +1,5 @@
 /* =========================================================================
- * 对白美化 · 全局 CSS 注入器  v2.1.0
+ * 对白美化 · 全局 CSS 注入器  v2.1.1
  * -------------------------------------------------------------------------
  * 【为什么需要它 / v2.0.0 的由来】
  *   酒馆会把消息里的所有 class 改名：nvn-dialogue → custom-nvn-dialogue
@@ -57,6 +57,11 @@
  *     ① 远端 version 更旧 → 不执行；② 清单 version 与脚本内 VERSION 不符 → 不执行；
  *     ③ 执行完回读版本，不符就在控制台报警。
  *
+ * 【发布 2.1.1（2026-11-07）】
+ *   1) 修「双语格式下台词下方多出一条竖线尾巴」：空 .nvn-text-tail 容器没被隐藏。
+ *      根因是隐藏规则只认 .nvn-primary，而双语模板用的是 .nvn-quote-val。
+ *   2) 新增 .nvn-ja-fallback 规则：供「纯中文」正则使用——日文默认隐藏，
+ *      仅当对应中文为空时回退显示原文，避免纯日文台词变成空白。
  * 【发布 2.1.0（2026-11-06）】\n *   1) 补齐勇战/MGQ 角色立绘：151 张点击展开的大立绘（小头像保持原样）+ 优依/尤克夏/戴安娜/琪琪露/米娜/莉莉/菲玖/贞德 8 张大立绘。
  *   2) 修「右引号停在第一行行尾」：.custom-nvn-text 由 flex 改为 block，右引号跟随最后一个字。
  *   3) NEW_CHARACTERS 带 portrait 的角色自动放开弹层（基础 CSS 原本对非名单角色 pointer-events:none）。
@@ -68,7 +73,7 @@
 (async function () {
   'use strict';
 
-  const VERSION  = '2.1.0';
+  const VERSION  = '2.1.1';
   const STYLE_ID = 'nvn-dialogue-theme-css';
   const SLOT     = '__NVN_DLG_CSS__';
 
@@ -2539,9 +2544,23 @@ div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-portrait-f
   line-height: inherit !important;
 }
 
-/* ⭐ 隐藏空的尾部对话容器 */
+/* ⭐ 隐藏空的尾部对话容器
+   v2.7 修正：中日双语模板用的是 .nvn-quote-val（不是 .nvn-primary），
+   旧规则永远匹配不到，于是没有第二段台词时容器仍画左边框，
+   在台词下方留下一条莫名其妙的竖线尾巴。 */
 .custom-nvn-text-tail:has(.custom-nvn-primary:empty) {
   display: none !important;
+}
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-text-tail:not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-quote-val:not(:empty))) {
+  display: none !important;
+}
+
+/* ⭐ 纯中文版：日文兜底默认隐藏，仅当对应中文为空时才显示原文 */
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-ja-fallback {
+  display: none !important;
+}
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-zh:empty + .custom-nvn-ja-fallback {
+  display: inline !important;
 }
 
 /* ====== 修复第二段对白变色与双重括号问题 ====== */
@@ -4569,9 +4588,23 @@ div.custom-nvn-dialogue:is([data-char*="一之濑雫"], ) .custom-nvn-portrait-f
   line-height: inherit !important;
 }
 
-/* ⭐ 隐藏空的尾部对话容器 */
+/* ⭐ 隐藏空的尾部对话容器
+   v2.7 修正：中日双语模板用的是 .nvn-quote-val（不是 .nvn-primary），
+   旧规则永远匹配不到，于是没有第二段台词时容器仍画左边框，
+   在台词下方留下一条莫名其妙的竖线尾巴。 */
 .custom-nvn-text-tail:has(.custom-nvn-primary:empty) {
   display: none !important;
+}
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-text-tail:not(:has(.custom-nvn-primary:not(:empty))):not(:has(.custom-nvn-quote-val:not(:empty))) {
+  display: none !important;
+}
+
+/* ⭐ 纯中文版：日文兜底默认隐藏，仅当对应中文为空时才显示原文 */
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-ja-fallback {
+  display: none !important;
+}
+div.custom-nvn-dialogue[data-mode^="bilingual"] .custom-nvn-zh:empty + .custom-nvn-ja-fallback {
+  display: inline !important;
 }
 
 /* ====== 修复第二段对白变色与双重括号问题 ====== */
