@@ -81,7 +81,7 @@
 (async function () {
   'use strict';
 
-  const VERSION  = '2.1.3';
+  const VERSION  = '2.1.4';
   const STYLE_ID = 'nvn-dialogue-theme-css';
   const SLOT     = '__NVN_DLG_CSS__';
 
@@ -4986,6 +4986,36 @@ div.custom-nvn-dialogue:is([data-char*="爱丽丝"], [data-char*="爱·丽·丝"
   let current = null;
   let cache = null;   /* 主题 -> 完整 CSS，避免每次重建字符串 */
 
+  /* ---------------- 只属于装它时的那张卡 ---------------- */
+  function currentCharName() {
+    try {
+      const ctx = HW.SillyTavern && HW.SillyTavern.getContext && HW.SillyTavern.getContext();
+      if (ctx) {
+        if (ctx.name) return String(ctx.name);
+        const id = ctx.characterId;
+        if (id !== undefined && id !== null && ctx.characters && ctx.characters[id]) {
+          return String(ctx.characters[id].name || '');
+        }
+      }
+    } catch (_) {}
+    try {
+      const el = HD.querySelector('#character_name_pole') || HD.querySelector('.character_name');
+      if (el && el.textContent) return el.textContent.trim();
+    } catch (_) {}
+    return '';
+  }
+  const BOUND_NAME = currentCharName();
+
+  function unmountStyle() {
+    try {
+      for (const el of HD.querySelectorAll('#' + STYLE_ID)) {
+        try { el.remove(); } catch (_) {}
+      }
+    } catch (_) {}
+    styleEl = null;
+    current = null;
+  }
+
   function fullCss(theme) {
     if (!cache) cache = {};
     if (!cache[theme]) cache[theme] = CSS[theme] + buildNewCharacterCss();
@@ -4997,7 +5027,10 @@ div.custom-nvn-dialogue:is([data-char*="爱丽丝"], [data-char*="爱·丽·丝"
     if (!force && theme === current && styleEl && styleEl.isConnected) return;
 
     HD = getHostDoc();
-    const head = HD.head || HD.documentElement;
+    /* 挂到 #chat 里：换聊天时酒馆会清空 #chat，这份样式跟着消失，
+       不会像以前那样留在 <head> 里、跑到别的卡继续生效。 */
+    const chatBox = HD.getElementById ? HD.getElementById('chat') : null;
+    const head = chatBox || HD.head || HD.documentElement;
     if (!head) return;
 
     try {
@@ -5019,6 +5052,13 @@ div.custom-nvn-dialogue:is([data-char*="爱丽丝"], [data-char*="爱·丽·丝"
   }
 
   function reconcile() {
+    /* 换到别的卡：撤掉样式，别去给别的卡上妆；切回本卡时会自动重新注入 */
+    if (BOUND_NAME) {
+      const now = currentCharName();
+      if (now && now !== BOUND_NAME) { unmountStyle(); return; }
+    }
+    /* 屏幕上没有本美化的对白行时（空聊天 / 别的卡）不注入 */
+    try { if (!HD.querySelector('.custom-nvn-dialogue')) return; } catch (_) {}
     try {
       const t = themeFromDom() || current || themeFromConfig() || 'light';
       apply(t, false);
@@ -5082,6 +5122,7 @@ div.custom-nvn-dialogue:is([data-char*="爱丽丝"], [data-char*="爱·丽·丝"
     try { if (timer) clearInterval(timer); } catch (_) {}
     timer = null;
     for (const d of disposers.splice(0)) { try { d(); } catch (_) {} }
+    try { for (const el of HD.querySelectorAll('#' + STYLE_ID)) { try { el.remove(); } catch (_) {} } } catch (_) {}
     try { if (styleEl && styleEl.isConnected) styleEl.remove(); } catch (_) {}
     styleEl = null;
     current = null;
@@ -5089,6 +5130,7 @@ div.custom-nvn-dialogue:is([data-char*="爱丽丝"], [data-char*="爱·丽·丝"
 
   function boot() {
     try { if (HW[SLOT] && typeof HW[SLOT].destroy === 'function') HW[SLOT].destroy(); } catch (_) {}
+    try { HW.addEventListener('beforeunload', destroy); HW.addEventListener('pagehide', destroy); } catch (_) {}
 
     apply(themeFromDom() || themeFromConfig() || 'light', true);
     wireObserver();
